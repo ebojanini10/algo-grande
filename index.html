@@ -737,6 +737,25 @@
       El mundo está cambiando ahora mismo. No después. Ahora.<br/>
       Y si esperas a que sea obvio, ya vas tarde.
     </p>
+    <p style="margin-top:1.8rem; font-size:0.82rem; font-weight:300; color:var(--light); letter-spacing:0.05em;">
+      ♪ Para leer con la canción correcta de fondo —
+      <a href="#player" style="color:var(--red); text-decoration:none; font-weight:500;" onclick="document.getElementById('player').style.display='block'; document.getElementById('player').scrollIntoView({behavior:'smooth'}); return false;">reproduce esto mientras lees</a>
+    </p>
+
+    <div id="player" style="margin-top:1.2rem; display:none;">
+      <iframe
+        id="spotify-player"
+        style="border-radius:0; border:1px solid var(--cream);"
+        src="https://open.spotify.com/embed/track/5Lp9GcZAY7H2M2NjIS3Cdn?utm_source=generator&theme=0"
+        width="100%"
+        height="80"
+        frameborder="0"
+        allowfullscreen=""
+        allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+        loading="lazy">
+      </iframe>
+    </div>
+
     <hr class="hero-divider" />
   </div>
 
