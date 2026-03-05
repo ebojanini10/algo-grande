@@ -738,20 +738,8 @@
       Y si esperas a que sea obvio, ya vas tarde.
     </p>
     <p style="margin-top:1.8rem; font-size:0.82rem; font-weight:300; color:var(--light); letter-spacing:0.05em;">
-      ♪ Dale play y lee con la canción correcta de fondo
+      ♪ Dale play abajo y lee con la canción correcta de fondo
     </p>
-
-    <div id="player" style="margin-top:1.2rem;">
-      <iframe
-        style="border-radius:0; border:1px solid var(--cream);"
-        src="https://open.spotify.com/embed/track/5Lp9GcZAY7H2M2NjIS3Cdn?utm_source=generator&theme=0"
-        width="100%"
-        height="80"
-        frameborder="0"
-        allowfullscreen=""
-        allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture">
-      </iframe>
-    </div>
 
     <hr class="hero-divider" />
   </div>
@@ -1221,6 +1209,58 @@
       el.dataset.delay = (i % 4) * 80;
       observer.observe(el);
     });
+  </script>
+
+  <!-- PLAYER FIJO -->
+  <div id="yt-bar" style="position:fixed; bottom:0; left:0; right:0; background:#0d0d0d; border-top:1px solid #222; z-index:9998; display:flex; align-items:center; padding:0.6rem 1.2rem; gap:1rem;">
+    <div style="flex-shrink:0;">
+      <iframe
+        id="yt-iframe"
+        width="0"
+        height="0"
+        src="https://www.youtube-nocookie.com/embed/1jO2wSpAoxA?enablejsapi=1&controls=0&rel=0"
+        frameborder="0"
+        allow="autoplay; encrypted-media"
+        style="display:none;">
+      </iframe>
+      <button onclick="togglePlay()" id="play-btn"
+        style="background:none; border:1px solid #444; color:#f5f0e8; font-size:1rem; width:36px; height:36px; cursor:pointer; display:flex; align-items:center; justify-content:center; flex-shrink:0;">
+        ▶
+      </button>
+    </div>
+    <div style="flex:1; min-width:0;">
+      <p style="margin:0; font-size:0.78rem; color:#f5f0e8; font-weight:500; white-space:nowrap; overflow:hidden; text-overflow:ellipsis;">If the World Was Ending</p>
+      <p style="margin:0; font-size:0.68rem; color:#666;">Evaluna Montaner</p>
+    </div>
+    <button onclick="document.getElementById('yt-bar').style.display='none'"
+      style="background:none; border:none; color:#444; font-size:1.1rem; cursor:pointer; flex-shrink:0; padding:0.2rem 0.4rem;">✕</button>
+  </div>
+
+  <script>
+    var playing = false;
+    var player;
+
+    function onYouTubeIframeAPIReady() {
+      player = new YT.Player('yt-iframe', {
+        videoId: '1jO2wSpAoxA',
+        playerVars: { rel: 0, controls: 0, modestbranding: 1 },
+        events: { onStateChange: onStateChange }
+      });
+    }
+
+    function onStateChange(e) {
+      playing = e.data === 1;
+      document.getElementById('play-btn').textContent = playing ? '⏸' : '▶';
+    }
+
+    function togglePlay() {
+      if (!player) return;
+      playing ? player.pauseVideo() : player.playVideo();
+    }
+
+    var tag = document.createElement('script');
+    tag.src = "https://www.youtube.com/iframe_api";
+    document.head.appendChild(tag);
   </script>
 
 </body>
