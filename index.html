@@ -412,6 +412,135 @@
       margin: 0;
     }
 
+    /* ── JUBILADOS BLOCK ── */
+    .jubilados-wrap {
+      padding: 4rem 0;
+      border-top: 2px solid var(--ink);
+    }
+
+    .jubilados-tag {
+      font-family: 'DM Sans', sans-serif;
+      font-size: 0.7rem;
+      font-weight: 500;
+      letter-spacing: 0.28em;
+      text-transform: uppercase;
+      color: var(--light);
+      margin-bottom: 1.2rem;
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+    }
+
+    .jubilados-tag::before {
+      content: '';
+      display: inline-block;
+      width: 20px;
+      height: 1px;
+      background: var(--light);
+    }
+
+    .jubilados-box {
+      background: var(--cream);
+      border-left: 4px solid var(--red);
+      padding: 2.5rem;
+      margin-bottom: 2rem;
+    }
+
+    .jubilados-box h2 {
+      font-size: 1.8rem;
+      margin-bottom: 1.2rem;
+    }
+
+    .jubilados-box p {
+      font-size: 1rem;
+    }
+
+    .risk-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 1.5rem 0;
+      font-size: 0.92rem;
+    }
+
+    .risk-table th {
+      font-family: 'DM Sans', sans-serif;
+      font-size: 0.68rem;
+      font-weight: 500;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--light);
+      text-align: left;
+      padding: 0.6rem 0.8rem;
+      border-bottom: 2px solid var(--ink);
+    }
+
+    .risk-table td {
+      padding: 0.85rem 0.8rem;
+      border-bottom: 1px solid var(--cream);
+      vertical-align: top;
+      font-weight: 300;
+      color: #2a2520;
+    }
+
+    .risk-table tr:last-child td { border-bottom: none; }
+
+    .risk-table .sector { font-weight: 500; color: var(--ink); }
+
+    .badge {
+      display: inline-block;
+      font-size: 0.68rem;
+      font-weight: 500;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      padding: 0.2rem 0.6rem;
+      border-radius: 2px;
+    }
+
+    .badge-high { background: #fce4e4; color: var(--red); }
+    .badge-med  { background: #fdf3dc; color: #9a6a00; }
+    .badge-low  { background: #e4f4e8; color: #2d6a3f; }
+
+    .jubilados-tips {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1px;
+      background: var(--cream);
+      border: 1px solid var(--cream);
+      margin-top: 1.5rem;
+    }
+
+    .jub-tip {
+      background: var(--paper);
+      padding: 1.5rem;
+    }
+
+    .jub-tip-icon {
+      font-size: 1.5rem;
+      margin-bottom: 0.6rem;
+      display: block;
+    }
+
+    .jub-tip h4 {
+      font-family: 'DM Sans', sans-serif;
+      font-size: 0.9rem;
+      font-weight: 500;
+      color: var(--ink);
+      margin-bottom: 0.4rem;
+    }
+
+    .jub-tip p {
+      font-size: 0.85rem;
+      color: var(--gray);
+      margin: 0;
+    }
+
+    @media (max-width: 680px) {
+      .jubilados-tips { grid-template-columns: 1fr; }
+      .jubilados-box { padding: 1.5rem; }
+      .risk-table { font-size: 0.82rem; }
+      .risk-table td, .risk-table th { padding: 0.6rem 0.4rem; }
+    }
+
     /* ── MANUELA BLOCK ── */
     .manuela-wrap {
       padding: 4rem 0;
@@ -781,6 +910,102 @@
         </div>
       </div>
     </section>
+  </div>
+
+  <!-- JUBILADOS -->
+  <div class="content-wrap">
+    <div class="jubilados-wrap fade-in">
+      <div class="jubilados-tag">Para los que ya construyeron su patrimonio</div>
+      <div class="jubilados-box">
+        <h2>Para papás y personas<br/><em>jubiladas con inversiones</em></h2>
+        <p>
+          Si ya terminaste tu etapa de construir — si tienes ahorros, propiedades, pensión, o cualquier forma de patrimonio que proteger — esto también te afecta. Y probablemente de formas que nadie te ha explicado.
+        </p>
+        <p>
+          No se trata de que tú "aprendas a usar el AI". Se trata de entender cómo el AI va a mover los mercados, los sectores, y el valor de lo que ya tienes.
+        </p>
+
+        <p><strong>¿Tus inversiones están en sectores vulnerables?</strong></p>
+
+        <table class="risk-table">
+          <thead>
+            <tr>
+              <th>Sector / Activo</th>
+              <th>Impacto esperado</th>
+              <th>Riesgo</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="sector">Finca raíz de oficinas</td>
+              <td>Menos demanda de espacio físico a medida que el trabajo automatizado reduce nómina y presencia</td>
+              <td><span class="badge badge-high">Alto</span></td>
+            </tr>
+            <tr>
+              <td class="sector">Acciones de BPO / call centers</td>
+              <td>El AI reemplaza el 80–90% de estas funciones. Empresas enteras en riesgo de desaparecer en 3 años</td>
+              <td><span class="badge badge-high">Alto</span></td>
+            </tr>
+            <tr>
+              <td class="sector">Fondos de pensiones tradicionales</td>
+              <td>Dependen de mercados laborales estables. Si el empleo cae masivamente, los aportes caen también</td>
+              <td><span class="badge badge-med">Medio</span></td>
+            </tr>
+            <tr>
+              <td class="sector">Finca raíz residencial</td>
+              <td>Más estable — pero ciudades con economías basadas en empleo de oficina podrían perder valor</td>
+              <td><span class="badge badge-med">Medio</span></td>
+            </tr>
+            <tr>
+              <td class="sector">Empresas de tecnología / AI</td>
+              <td>Las que fabrican o usan AI tienen viento a favor. Alto potencial de crecimiento</td>
+              <td><span class="badge badge-low">Oportunidad</span></td>
+            </tr>
+            <tr>
+              <td class="sector">Sector salud y cuidado</td>
+              <td>El AI va a transformar diagnóstico, pero el cuidado humano directo sigue siendo irreemplazable</td>
+              <td><span class="badge badge-low">Estable</span></td>
+            </tr>
+            <tr>
+              <td class="sector">Dólares y activos en USD</td>
+              <td>Si Estados Unidos lidera la revolución AI, el dólar mantiene fortaleza. Diversificar en USD tiene sentido</td>
+              <td><span class="badge badge-low">Estable</span></td>
+            </tr>
+          </tbody>
+        </table>
+
+        <p>
+          No estoy diciendo que muevas todo mañana. Estoy diciendo que <strong>vale la pena revisar con quién asesora tus inversiones si entiende lo que está pasando con el AI</strong> — porque muchos asesores tradicionales todavía no lo están procesando.
+        </p>
+
+        <div class="jubilados-tips">
+          <div class="jub-tip">
+            <span class="jub-tip-icon">🔍</span>
+            <h4>Pregúntale a tu asesor</h4>
+            <p>"¿Qué porcentaje de mi portafolio está expuesto a sectores que el AI va a desplazar en los próximos 3 años?" Si no tiene respuesta clara, es señal de alerta.</p>
+          </div>
+          <div class="jub-tip">
+            <span class="jub-tip-icon">🌍</span>
+            <h4>Diversifica geografía</h4>
+            <p>Tener todo en Colombia o en un solo mercado es más riesgoso que antes. Los efectos del AI van a ser desiguales por región y sector.</p>
+          </div>
+          <div class="jub-tip">
+            <span class="jub-tip-icon">💵</span>
+            <h4>Liquidez sobre todo</h4>
+            <p>En épocas de cambio rápido, tener acceso a efectivo o activos líquidos vale más que maximizar rendimiento en el corto plazo.</p>
+          </div>
+          <div class="jub-tip">
+            <span class="jub-tip-icon">👨‍👩‍👧</span>
+            <h4>Tus hijos son tu mejor activo</h4>
+            <p>Ayudar a los que dependen de ti a adaptarse al AI es la inversión con mejor retorno que puedes hacer ahora mismo.</p>
+          </div>
+        </div>
+
+        <p style="margin-top:1.5rem;">
+          Lo más importante: <strong>no entrar en pánico, pero sí estar informado</strong>. El AI también va a crear oportunidades enormes — en salud, en productividad, en calidad de vida. La clave es no quedar del lado equivocado cuando el tablero cambie.
+        </p>
+      </div>
+    </div>
   </div>
 
   <!-- MANUELA -->
