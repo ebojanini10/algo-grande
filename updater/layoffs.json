@@ -1,0 +1,15 @@
+{
+  "despidos": [
+    {"empresa": "Amazon",    "industria": "E-commerce / Nube",      "empleos": 27000, "ai_explicito": false, "año": 2023},
+    {"empresa": "Meta",      "industria": "Redes sociales",          "empleos": 21000, "ai_explicito": false, "año": 2023},
+    {"empresa": "BT Group",  "industria": "Telecomunicaciones",      "empleos": 18000, "ai_explicito": true,  "año": 2024},
+    {"empresa": "Google",    "industria": "Tecnología",              "empleos": 12000, "ai_explicito": false, "año": 2023},
+    {"empresa": "UPS",       "industria": "Logística",               "empleos": 12000, "ai_explicito": false, "año": 2024},
+    {"empresa": "Microsoft", "industria": "Tecnología",              "empleos": 10000, "ai_explicito": false, "año": 2023},
+    {"empresa": "IBM",       "industria": "Tecnología",              "empleos": 7800,  "ai_explicito": true,  "año": 2023},
+    {"empresa": "Salesforce","industria": "Software empresarial",    "empleos": 7000,  "ai_explicito": false, "año": 2023},
+    {"empresa": "Klarna",    "industria": "Fintech",                 "empleos": 700,   "ai_explicito": true,  "año": 2024},
+    {"empresa": "Duolingo",  "industria": "Educación",               "empleos": 500,   "ai_explicito": true,  "año": 2023}
+  ],
+  "ultima_actualizacion": "2026-03-05"
+}
